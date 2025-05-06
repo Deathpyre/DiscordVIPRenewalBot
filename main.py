@@ -62,8 +62,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
-        return
+    #if message.author == bot.user:
+    #    return
 
     #if message.channel.name != 'subscription-events':
     #    return
@@ -124,5 +124,5 @@ async def on_message(message):
     #             else:
     #                 await message.channel.send(f'Role {elite_role} not found in this server.')
     
-    await bot.process_commands(message)
+    #await bot.process_commands(message)
     
