@@ -1,4 +1,5 @@
 ﻿#from xml.sax import handler
+from aiogram import Bot, types
 import discord
 from discord.ext import commands
 #import logging

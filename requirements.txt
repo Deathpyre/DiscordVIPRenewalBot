@@ -1,3 +1,4 @@
 discord.py
 requests
 flask
+aiogram==2.23.1
