@@ -62,6 +62,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    return;
     #if message.author == bot.user:
     #    return
 
