@@ -4,7 +4,7 @@ from discord.ext import commands
 #import logging
 #from dotenv import load_dotenv
 import os
-#import requests
+import requests
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
@@ -24,18 +24,18 @@ elite_role = "⛥ Elite Saints ⛥"
 #from keep_alive import keep_alive
 #keep_alive()
 
-# def username_to_member(guild: discord.Guild, name:str):
-#     "Returns None if name not found in guild"
-#     for member in guild.members:
-#         if member.name == name:
-#             return member
-#     return None
+ def username_to_member(guild: discord.Guild, name:str):
+     "Returns None if name not found in guild"
+     for member in guild.members:
+         if member.name == name:
+             return member
+     return None
 
-# @bot.event
-# async def on_ready():
-#    print(f'Logged in as {bot.user.name} - {bot.user.id}')
-#    print('------')
-#    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
+ @bot.event
+ async def on_ready():
+    print(f'Logged in as {bot.user.name} - {bot.user.id}')
+    print('------')
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
 
 bot.run(token)#, log_handler=handler, log_level=logging.DEBUG
 
