@@ -81,11 +81,11 @@ async def on_message(message):
                 if foundMember:
                     await message.delete()  # Delete the webhook message after processing
                     #print('deleted')
-                    requests.post(parts[3], json={'responseType' : 'registrationResult', 'success' : 'true', 'userId' : parts[1], 'discordName' : username})
+                    #requests.post(parts[3], json={'responseType' : 'registrationResult', 'success' : 'true', 'userId' : parts[1], 'discordName' : username})
                     #print('posted')
                 else:
                     await message.delete()  # Delete the webhook message after processing
-                    requests.post(parts[3], json={'responseType' : 'registrationResult', 'success' : 'false', 'userId' : parts[1], 'discordName' : username})
+                    #requests.post(parts[3], json={'responseType' : 'registrationResult', 'success' : 'false', 'userId' : parts[1], 'discordName' : username})
         elif message.content.startswith('slRoleAssign'):
             parts = message.content.split('::')
             if len(parts) == 7:
@@ -100,7 +100,7 @@ async def on_message(message):
                         await message.channel.send(f'{foundMember.mention} Now has the {baseRole.name} and {eliteRole.name} role. [Profile Link]({parts[1]})```Paid at {parts[3]}\nExpires at {parts[4]}```')
                         #print('Gave role')
                         await message.delete()  # Delete the webhook message after processing
-                        requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'true', 'userId' : parts[6]})
+                        #requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'true', 'userId' : parts[6]})
                         #print('second posted')
                     else:
                         await message.channel.send(f'Username "{username}" not found in this server.\nPlease inform the purchaser:[Profile Link]({parts[1]})')
@@ -124,5 +124,5 @@ async def on_message(message):
                 else:
                     await message.channel.send(f'Role {elite_role} not found in this server.')
     
-    await bot.process_commands(message)
+    #await bot.process_commands(message)
     
