@@ -32,7 +32,7 @@ def username_to_member(guild: discord.Guild, name:str):
     return None
 
 @bot.event
-    async def on_ready():
+async def on_ready():
     print(f'Logged in as {bot.user.name} - {bot.user.id}')
     print('------')
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
