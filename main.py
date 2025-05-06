@@ -37,7 +37,7 @@ async def on_ready():
    print('------')
    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
 
-   bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 # @bot.command()
 # @commands.has_role(admin_role)
 # async def assign(ctx, member: discord.Member):
