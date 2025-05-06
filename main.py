@@ -21,8 +21,8 @@ admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
 
-from keep_alive import keep_alive
-keep_alive()
+#from keep_alive import keep_alive
+#keep_alive()
 
 # def username_to_member(guild: discord.Guild, name:str):
 #     "Returns None if name not found in guild"
@@ -37,7 +37,7 @@ keep_alive()
 #    print('------')
 #    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
 
-#bot.run(token)#, log_handler=handler, log_level=logging.DEBUG
+bot.run(token)#, log_handler=handler, log_level=logging.DEBUG
 
 # @bot.command()
 # @commands.has_role(admin_role)
