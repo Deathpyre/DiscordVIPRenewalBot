@@ -1,11 +1,10 @@
 ﻿#from xml.sax import handler
-from aiogram import Bot, types
 import discord
 from discord.ext import commands
 #import logging
 #from dotenv import load_dotenv
 import os
-import requests
+#import requests
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
@@ -16,7 +15,7 @@ intents.message_content = True
 intents.members = True
 intents.webhooks = True
 
-bot = Bot(token)#commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
