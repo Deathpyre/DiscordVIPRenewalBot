@@ -60,9 +60,8 @@ async def on_ready():
 #     else:
 #         await ctx.send(f'Role {elite_role} not found in this server.')
 
-@bot.event
-async def on_message(message):
-    return;
+#@bot.event
+#async def on_message(message):
     #if message.author == bot.user:
     #    return
 
