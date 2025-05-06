@@ -1,7 +1,7 @@
-﻿from xml.sax import handler
+﻿#from xml.sax import handler
 import discord
 from discord.ext import commands
-import logging
+#import logging
 #from dotenv import load_dotenv
 import os
 import requests
@@ -9,7 +9,7 @@ import requests
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
 
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+#handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
