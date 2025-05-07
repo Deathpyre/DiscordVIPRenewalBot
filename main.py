@@ -9,10 +9,6 @@ import requests
 from flask import Flask, render_template
 from threading import Thread
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 4000 
-
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
 
@@ -35,13 +31,16 @@ elite_role = "⛥ Elite Saints ⛥"
 #app = Flask(__name__)
 #@app.route('/')
 #app.run(host='0.0.0.0', port=8080)
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app = Flask(__name__)
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 4000))
+    app.run(host='0.0.0.0', port=port)
+
 
 def username_to_member(guild: discord.Guild, name:str):
     "Returns None if name not found in guild"
