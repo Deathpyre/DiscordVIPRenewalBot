@@ -6,8 +6,8 @@ import logging
 import os
 import requests
 
-#from flask import Flask, render_template
-#from threading import Thread
+from flask import Flask, render_template
+from threading import Thread
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
@@ -24,17 +24,17 @@ admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
 
-#from keep_alive import keep_alive
-#keep_alive()
-#app = Flask(__name__)
+from keep_alive import keep_alive
+keep_alive()
+app = Flask(__name__)
 #
-#@app.route('/')
-#def hello():
-#    return "Hello World!"
+@app.route('/')
+def hello():
+    return "Hello World!"
 #
-#if __name__ == '__main__':
-#        port = int(os.environ.get('PORT', 4000))
-#        app.run(host='0.0.0.0', port=port)
+if __name__ == '__main__':
+        port = int(os.environ.get('PORT', 4000))
+        app.run(host='0.0.0.0', port=port)
 #
 def username_to_member(guild: discord.Guild, name:str):
     "Returns None if name not found in guild"
