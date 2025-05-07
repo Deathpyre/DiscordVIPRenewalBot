@@ -6,8 +6,8 @@ import logging
 import os
 import requests
 
-#from flask import Flask, render_template
-#from threading import Thread
+from flask import Flask, render_template
+from threading import Thread
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
