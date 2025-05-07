@@ -133,4 +133,4 @@ async def on_message(message):
                     await message.channel.send(f'Role {elite_role} not found in this server.')
     
     await bot.process_commands(message)
-bot.run(token)
+bot.run(token, log_handler=handler, log_level=logging.DEBUG)
