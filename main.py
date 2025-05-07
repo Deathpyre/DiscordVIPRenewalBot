@@ -6,8 +6,8 @@ import logging
 import os
 import requests
 
-#from flask import Flask, render_template
-#from threading import Thread
+from flask import Flask, render_template
+from threading import Thread
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
@@ -91,3 +91,13 @@ async def on_message(message):
                     await message.channel.send(f'Role {elite_role} not found in this server.')
     
     await bot.process_commands(message)
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 4000))
+    app.run(host='0.0.0.0', port=port)
