@@ -24,6 +24,8 @@ admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
 
+time.sleep(10)
+
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 
 @bot.event
