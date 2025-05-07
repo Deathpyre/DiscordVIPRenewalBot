@@ -97,24 +97,24 @@ async def on_message(message):
         elif message.content.startswith('slRoleAssign'):
             parts = message.content.split('::')
             #if len(parts) == 8:
-                username = parts[2]
-                baseRole = discord.utils.get(message.guild.roles, name=vip_role)
-                eliteRole = discord.utils.get(message.guild.roles, name=elite_role)
-                if baseRole and eliteRole:
-                    foundMember = username_to_member(message.guild, username)
-                    if foundMember:
-                        await foundMember.add_roles(baseRole)
-                        await foundMember.add_roles(eliteRole)
-                        await message.channel.send(f'{foundMember.mention} purchased {parts[7]} days.\nThey now have the {baseRole.name} and {eliteRole.name} role. [Profile Link]({parts[1]})```Paid at {parts[3]}\nExpires at {parts[4]}```')
+            username = parts[2]
+            baseRole = discord.utils.get(message.guild.roles, name=vip_role)
+            eliteRole = discord.utils.get(message.guild.roles, name=elite_role)
+            if baseRole and eliteRole:
+                foundMember = username_to_member(message.guild, username)
+                if foundMember:
+                    await foundMember.add_roles(baseRole)
+                    await foundMember.add_roles(eliteRole)
+                    await message.channel.send(f'{foundMember.mention} purchased {parts[7]} days.\nThey now have the {baseRole.name} and {eliteRole.name} role. [Profile Link]({parts[1]})```Paid at {parts[3]}\nExpires at {parts[4]}```')
                         #print('Gave role')
-                        await message.delete()  # Delete the webhook message after processing
-                        requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'true', 'userId' : parts[6]})
+                    await message.delete()  # Delete the webhook message after processing
+                    requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'true', 'userId' : parts[6]})
                         #print('second posted')
-                    else:
-                        await message.channel.send(f'Username "{username}" not found in this server.\nPlease inform the purchaser:[Profile Link]({parts[1]})')
-                        requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'false'})
                 else:
-                    await message.channel.send(f'Role {elite_role} or {vip_role} not found in this server.')
+                    await message.channel.send(f'Username "{username}" not found in this server.\nPlease inform the purchaser:[Profile Link]({parts[1]})')
+                    requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'false'})
+            else:
+                await message.channel.send(f'Role {elite_role} or {vip_role} not found in this server.')
         elif message.content.startswith('slRoleRemove'):
             parts = message.content.split('::')
             if len(parts) == 6:
