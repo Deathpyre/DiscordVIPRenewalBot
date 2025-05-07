@@ -31,6 +31,17 @@ elite_role = "⛥ Elite Saints ⛥"
 #app = Flask(__name__)
 #@app.route('/')
 #app.run(host='0.0.0.0', port=8080)
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 def username_to_member(guild: discord.Guild, name:str):
     "Returns None if name not found in guild"
