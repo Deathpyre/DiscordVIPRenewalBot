@@ -23,6 +23,7 @@ elite_role = "⛥ Elite Saints ⛥"
 
 #from keep_alive import keep_alive
 #keep_alive()
+app.run(host='0.0.0.0', port=8080)
 
 def username_to_member(guild: discord.Guild, name:str):
     "Returns None if name not found in guild"
