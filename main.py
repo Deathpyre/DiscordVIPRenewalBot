@@ -96,7 +96,7 @@ async def on_message(message):
                     requests.post(parts[3], json={'responseType' : 'registrationResult', 'success' : 'false', 'userId' : parts[1], 'discordName' : username})
         elif message.content.startswith('slRoleAssign'):
             parts = message.content.split('::')
-            if len(parts) == 8:
+            #if len(parts) == 8:
                 username = parts[2]
                 baseRole = discord.utils.get(message.guild.roles, name=vip_role)
                 eliteRole = discord.utils.get(message.guild.roles, name=elite_role)
@@ -105,7 +105,7 @@ async def on_message(message):
                     if foundMember:
                         await foundMember.add_roles(baseRole)
                         await foundMember.add_roles(eliteRole)
-                        await message.channel.send(f'{foundMember.mention} purchased {parts[2]} days.\nThey now have the {baseRole.name} and {eliteRole.name} role. [Profile Link]({parts[1]})```Paid at {parts[3]}\nExpires at {parts[4]}```')
+                        await message.channel.send(f'{foundMember.mention} purchased {parts[7]} days.\nThey now have the {baseRole.name} and {eliteRole.name} role. [Profile Link]({parts[1]})```Paid at {parts[3]}\nExpires at {parts[4]}```')
                         #print('Gave role')
                         await message.delete()  # Delete the webhook message after processing
                         requests.post(parts[5], json={'responseType' : 'roleResult', 'success' : 'true', 'userId' : parts[6]})
