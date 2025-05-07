@@ -24,8 +24,8 @@ admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
 
-from keep_alive import keep_alive
-keep_alive()
+#from keep_alive import keep_alive
+#keep_alive()
 app = Flask(__name__)
 #
 @app.route('/')
