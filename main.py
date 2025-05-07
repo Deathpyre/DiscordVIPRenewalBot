@@ -64,7 +64,7 @@ async def on_message(message):
 
     if message.channel.name != 'subscription-events':
         return
-     Check if the message is from a webhook
+     #Check if the message is from a webhook
      if message.webhook_id:
          # Parse the content of the webhook message
          if message.content.startswith('slUserRegistration'):
