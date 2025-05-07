@@ -18,7 +18,7 @@ intents.message_content = True
 intents.members = True
 intents.webhooks = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)#discord.Client(intents=intents)#
+bot = discord.Client(intents=intents)#
 
 admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
