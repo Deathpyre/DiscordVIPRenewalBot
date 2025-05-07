@@ -26,11 +26,8 @@ elite_role = "⛥ Elite Saints ⛥"
 
 #from keep_alive import keep_alive
 #keep_alive()
-app = Flask(__name__)
-
 #app = Flask(__name__)
-#@app.route('/')
-#app.run(host='0.0.0.0', port=8080)
+
 @app.route('/')
 def hello():
     return "Hello World!"
@@ -47,9 +44,9 @@ async def on_ready():
     print(f'Logged in as {bot.user.name} - {bot.user.id}')
     print('------')
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name='Elite Saints In World'))#name='Elite Saints VIP In World'))
-    if __name__ == '__main__':
-        port = int(os.environ.get('PORT', 4000))
-        app.run(host='0.0.0.0', port=port)
+    #if __name__ == '__main__':
+    #    port = int(os.environ.get('PORT', 4000))
+    #    app.run(host='0.0.0.0', port=port)
 
 # @bot.command()
 # @commands.has_role(admin_role)
