@@ -9,6 +9,10 @@ import requests
 from flask import Flask, render_template
 from threading import Thread
 
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000 
+
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
 
@@ -31,10 +35,6 @@ elite_role = "⛥ Elite Saints ⛥"
 #app = Flask(__name__)
 #@app.route('/')
 #app.run(host='0.0.0.0', port=8080)
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 4000 
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
