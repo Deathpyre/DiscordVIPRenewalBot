@@ -24,6 +24,8 @@ admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
 
+bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+
 #from keep_alive import keep_alive
 #keep_alive()
 app = Flask(__name__)
@@ -135,4 +137,3 @@ async def on_message(message):
                     await message.channel.send(f'Role {elite_role} not found in this server.')
     
     await bot.process_commands(message)
-bot.run(token, log_handler=handler, log_level=logging.DEBUG)
