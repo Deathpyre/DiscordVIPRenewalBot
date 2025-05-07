@@ -5,7 +5,6 @@ import logging
 #from dotenv import load_dotenv
 import os
 import requests
-import time
 
 #from flask import Flask, render_template
 #from threading import Thread
@@ -24,8 +23,6 @@ bot = commands.Bot(command_prefix='!', intents=intents)#discord.Client(intents=i
 admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
 elite_role = "⛥ Elite Saints ⛥"
-
-time.sleep(10)
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 
