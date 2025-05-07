@@ -6,6 +6,9 @@ import logging
 import os
 import requests
 
+from flask import Flask, render_template
+from threading import Thread
+
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
 
@@ -23,6 +26,16 @@ elite_role = "⛥ Elite Saints ⛥"
 
 #from keep_alive import keep_alive
 #keep_alive()
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Alive"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
 app.run(host='0.0.0.0', port=8080)
 
 def username_to_member(guild: discord.Guild, name:str):
