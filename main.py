@@ -28,9 +28,9 @@ elite_role = "⛥ Elite Saints ⛥"
 #keep_alive()
 #app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    return "Hello World!"
+#@app.route('/')
+#def hello():
+#    return "Hello World!"
 
 def username_to_member(guild: discord.Guild, name:str):
     "Returns None if name not found in guild"
