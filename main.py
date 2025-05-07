@@ -6,8 +6,8 @@ import logging
 import os
 import requests
 
-from flask import Flask, render_template
-from threading import Thread
+#from flask import Flask, render_template
+#from threading import Thread
 
 #load_dotenv()
 token = os.environ.get('DISCORD_TOKEN')
@@ -18,7 +18,7 @@ intents.message_content = True
 intents.members = True
 intents.webhooks = True
 
-bot = discord.Client(intents=intents)#
+bot = commands.Bot(command_prefix='!', intents=intents)#discord.Client(intents=intents)#
 
 admin_role = "admin"
 vip_role = "⛥ Saints ⛥"
