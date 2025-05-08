@@ -18,14 +18,6 @@ intents.message_content = True
 intents.members = True
 #intents.webhooks = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)#discord.Client(intents=intents)#
-
-admin_role = "admin"
-vip_role = "⛥ Saints ⛥"
-elite_role = "⛥ Elite Saints ⛥"
-
-bot.run(token)
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -35,6 +27,14 @@ def hello():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 4000))
     app.run(host='0.0.0.0', port=port)
+
+bot = commands.Bot(command_prefix='!', intents=intents)#discord.Client(intents=intents)#
+
+admin_role = "admin"
+vip_role = "⛥ Saints ⛥"
+elite_role = "⛥ Elite Saints ⛥"
+
+bot.run(token)
 
 @bot.event
 async def on_message(message):
